@@ -6,19 +6,16 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.post("/api/git/autodeploy", (req, res) => {
-  console.log(req.body);
+app.get("/", (req, res) => {
+  res.send("auto deploy project").end();
+});
 
+app.post("/api/git/autodeploy", (req, res) => {
   const { repository } = req.body;
   const { html_url } = repository;
 
-  console.log("====");
-  console.log(html_url);
-  console.log("====");
-  // const result = shell.exec("cd /root/html/deploy &&./dep.sh");
-  const result = {
-    code: 0
-  };
+  const projectName = html_url.substr(html_url.lastIndexOf("/") + 1);
+  const result = shell.exec(`cd /root/html/deploy &&./shell/${projectName}.sh`);
 
   if (result.code === 0) {
     res
