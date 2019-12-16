@@ -30,6 +30,6 @@ app.post("/api/git/autodeploy", (req, res) => {
   }
 });
 
-app.listen(9012, function() {
-  console.log("express server : 9012 : ok");
+app.listen(9030, function() {
+  console.log("express server : 9030 : ok");
 });
