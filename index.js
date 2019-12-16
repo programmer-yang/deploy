@@ -22,6 +22,6 @@ app.post("/git/photos", (req, res) => {
   }
 });
 
-app.listen(9002, function() {
-  console.log("express server : 8020 : ok");
+app.listen(9012, function() {
+  console.log("express server : 9012 : ok");
 });
