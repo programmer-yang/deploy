@@ -6,9 +6,13 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.post("/git/photos", (req, res) => {
+app.post("/api/git/autodeploy", (req, res) => {
   console.log(req.body);
   // const result = shell.exec("cd /root/html/deploy &&./dep.sh");
+  const result = {
+    code: 0
+  };
+
   if (result.code === 0) {
     res
       .status(200)
