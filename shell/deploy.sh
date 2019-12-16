@@ -6,12 +6,9 @@ cd '/root/html/deploy'
 
 git pull
 
-
 echo 'post-receive: building…' \
-&& echo 'post-receive: remove old serve' \
-&& (pm2 delete 'deploy' || true) \
-&& echo 'post-receive: add new serve' \
-&& pm2 start /root/html/deploy/index.js --name deploy \
+&& echo 'post-receive: restart deploy serve' \
+&& (pm2 restart 'deploy' || true) \
 && echo 'post-receive: app started successfully with pm2.'
 
 echo "end"
