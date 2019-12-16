@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("auto deploy project 1").end();
+  res.send("auto deploy project 2").end();
 });
 
 app.post("/api/git/autodeploy", (req, res) => {
