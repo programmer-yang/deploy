@@ -9,6 +9,6 @@ git pull origin master
 echo 'post-receive: stop serve' \
 && (pm2 delete 'deploy' || true) \
 && echo 'post-receive: start new serve' \
-&& pm2 start index.js --name deploy
+&& pm2 start /root/html/deploy/index.js --name deploy
 
 echo "end"
