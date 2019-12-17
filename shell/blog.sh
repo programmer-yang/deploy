@@ -2,7 +2,7 @@
 
 echo "begin"
 
-cd '/root/html/yangblog'
+cd '/root/html/yang/blog'
 
 git pull origin page
 

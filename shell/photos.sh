@@ -2,7 +2,7 @@
 
 echo "begin"
 
-cd '/root/html/photos'
+cd '/root/html/yang/photos'
 
 git pull origin master
 

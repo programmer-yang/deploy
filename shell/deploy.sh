@@ -2,7 +2,7 @@
 
 echo "begin"
 
-cd '/root/html/deploy'
+cd '/root/html/yang/deploy'
 
 git pull
 
