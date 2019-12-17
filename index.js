@@ -15,7 +15,7 @@ app.post("/api/git/autodeploy", (req, res) => {
   const { html_url } = repository;
 
   const projectName = html_url.substr(html_url.lastIndexOf("/") + 1);
-  const result = shell.exec(`cd /root/html/deploy &&./shell/${projectName}.sh`);
+  const result = shell.exec(`./root/html/yang/deploy/shell/${projectName}.sh`);
 
   console.log(`开始执行：${projectName}.sh`);
 
