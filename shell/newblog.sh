@@ -4,7 +4,7 @@ echo "begin"
 
 cd '/root/html/yang/blog'
 
-git pull origin page
+git pull origin master
 
 {
 echo 'post-receive: building…' \
