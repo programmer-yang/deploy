@@ -6,11 +6,16 @@ cd '/root/html/yang/photos'
 
 git pull origin master
 
+{
 echo 'post-receive: building…' \
 && npm run build \
 && echo 'post-receive: → done.' \
-&& (pm2 delete 'photos' || true) \
-&& pm2 serve ./dist 9001 --name photos --spa \
-&& echo 'post-receive: app started successfully with pm2.'
+&& rm -rf /usr/share/nginx/photos \
+&& cp -rf /root/html/yang/photos/dist /usr/share/nginx/photos \
+&& /usr/sbin/nginx -s reload \
+&& echo 'post-receive: nginx reload success'
+} || {
+  echo 'error'
+}
 
 echo "end"
